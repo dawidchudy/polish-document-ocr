@@ -43,20 +43,6 @@ python evaluate.py --page out/ocr.json --truth out/ground_truth.json
 The word list is one word per line, e.g. [SJP.PL](https://sjp.pl), dual-licensed
 GPL 2 or CC BY 4.0. Fonts without full Polish glyphs are skipped.
 
-## Two things worth knowing
-
-**Split by word, not by crop.** Every word is rendered once per font, so
-splitting crop by crop would put `umowa` in training in one typeface and in
-validation in another, and the model would be scored on strings it had already
-learned.
-
-**A dictionary is not a document.** A form is mostly capitals, digits and
-punctuation: a surname in capitals, an eleven digit identifier, `Nazwisko:` with
-the colon attached. Trained on lowercase words alone the recogniser fixes
-diacritics and forgets how to write a digit, and its page score falls below the
-stock model it was meant to beat. Case variants, punctuation and identifiers go
-into the corpus for that reason.
-
 ## Real documents
 
 Everything here is fabricated: the names come from a hardcoded pool and the
