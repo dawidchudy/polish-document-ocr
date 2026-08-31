@@ -1,0 +1,4 @@
+out/
+corpus/
+__pycache__/
+*.pt

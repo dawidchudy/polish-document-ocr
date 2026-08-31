@@ -1,0 +1,6 @@
+numpy
+pillow
+fonttools
+torch
+python-doctr
+deepdoctection
